@@ -16,7 +16,7 @@ const initdb = async () =>
 export const putDb = async (id, value) => {
 console.log('Request to update the jateDB');
 const jateDb = await openDB('jate', 1);
-const tx = jate.Db.transcation('jate', 'readwrite');
+const tx = jateDb.transaction('jate', 'readwrite');
 const objStore = tx.objectStore('jate');
 const req = objStore.put({ id: id, value: value })
 const res = await req;
